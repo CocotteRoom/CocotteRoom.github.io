@@ -1,3 +1,3 @@
-[![Build Status](https://travis-ci.org/CocotteRoom/CocotteRoom.github.io.svg?branch=master)](https://travis-ci.org/CocotteRoom/CocotteRoom.github.io)
+[![Build Status](https://travis-ci.org/CocotteRoom/CocotteRoom.github.io.svg?branch=develop)](https://travis-ci.org/CocotteRoom/CocotteRoom.github.io)
 
 ---
