@@ -2,5 +2,6 @@ language: node_js
 node_js:
   - "9"
 after_script:
+  - git config --global github.user $GH_USERNAME
   - git config --global github.token $GH_TOKEN
   - if [ "$TRAVIS_BRANCH" = "develop" ]; then yarn deploy; fi
