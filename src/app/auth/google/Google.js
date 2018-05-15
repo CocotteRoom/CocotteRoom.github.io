@@ -6,27 +6,28 @@ const GOOGLE_AUTH_CONFIG = {
   cookiepolicy: 'single_host_origin',
 };
 
-/* eslint-disable */
 export class Google extends Component {
+  componentDidMount() {
+    window.gapi.load('auth2', () => {
+      const auth2 = window.gapi.auth2.init(GOOGLE_AUTH_CONFIG);
+
+      this.attachSignin(auth2);
+    });
+  }
+
   attachSignin(auth2) {
     const element = document.getElementById('google-id');
     auth2.attachClickHandler(
       element,
       {},
-      user => {
-        this.props.onUserLoad({ name: user.getBasicProfile().getName(), type: 'google' });
+      (user) => {
+        this.props.onUserLoad(
+          { name: user.getBasicProfile().getName(), type: 'google' },
+          auth2.signOut,
+        );
       },
-      error => {
-        alert(JSON.stringify(error, undefined, 2));
-      },
+      error => console.error(error),
     );
-  }
-
-  componentDidMount() {
-    window.gapi.load('auth2', () => {
-      const auth2 = gapi.auth2.init(GOOGLE_AUTH_CONFIG);
-      this.attachSignin(auth2);
-    });
   }
 
   render() {
