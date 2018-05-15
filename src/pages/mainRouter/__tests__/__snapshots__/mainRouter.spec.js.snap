@@ -27,6 +27,9 @@ ShallowWrapper {
                 component={[Function]}
                 path="/recipe"
         />
+        <Route
+                component={[Function]}
+        />
 </Switch>,
     },
     "ref": null,
@@ -44,6 +47,9 @@ ShallowWrapper {
           <Route
             component={[Function]}
             path="/recipe"
+/>,
+          <Route
+            component={[Function]}
 />,
         ],
       },
@@ -74,6 +80,17 @@ ShallowWrapper {
           "rendered": null,
           "type": [Function],
         },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
       ],
       "type": [Function],
     },
@@ -95,6 +112,9 @@ ShallowWrapper {
                     component={[Function]}
                     path="/recipe"
           />
+          <Route
+                    component={[Function]}
+          />
 </Switch>,
       },
       "ref": null,
@@ -112,6 +132,9 @@ ShallowWrapper {
             <Route
               component={[Function]}
               path="/recipe"
+/>,
+            <Route
+              component={[Function]}
 />,
           ],
         },
@@ -137,6 +160,17 @@ ShallowWrapper {
             "props": Object {
               "component": [Function],
               "path": "/recipe",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
             },
             "ref": null,
             "rendered": null,
