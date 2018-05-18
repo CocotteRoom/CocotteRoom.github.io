@@ -10,7 +10,7 @@ export class Auth extends Component {
 
   handleSignIn() {
     const { provider, onUserConnected } = this.props;
-    firebase
+    return firebase
       .auth()
       .signInWithPopup(provider)
       .then((result) => {

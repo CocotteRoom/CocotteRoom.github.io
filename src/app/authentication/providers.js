@@ -2,7 +2,7 @@ import React from 'react';
 import firebase from '../firebase';
 import { Auth } from './Auth';
 
-const createProvider = (Component, provider) => props => (
+export const createProvider = (Component, provider) => props => (
   <Component {...props} provider={provider} />
 );
 
