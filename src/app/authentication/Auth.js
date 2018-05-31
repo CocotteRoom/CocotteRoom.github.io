@@ -8,24 +8,19 @@ export class Auth extends Component {
     this.handleSignIn = this.handleSignIn.bind(this);
   }
 
-  handleSignIn() {
-    const { provider, onUserConnected } = this.props;
-    return firebase
-      .auth()
-      .signInWithPopup(provider)
-      .then((result) => {
-        const token = result.credential.accessToken;
-        const { user } = result;
+  async handleSignIn() {
+    const { provider, onUserConnected, onError } = this.props;
 
-        onUserConnected({ user, token });
-      })
-      .catch((error) => {
-        console.log(error);
-        // const errorCode = error.code;
-        // const errorMessage = error.message;
-        // const email = error.email;
-        // const credential = error.credential;
-      });
+    try {
+      const {
+        user,
+        credential: { accessToken },
+      } = await firebase.auth().signInWithPopup(provider);
+
+      onUserConnected({ user, token: accessToken });
+    } catch (e) {
+      onError(e);
+    }
   }
 
   render() {
@@ -43,4 +38,5 @@ Auth.propTypes = {
   provider: PropTypes.shape({}).isRequired,
   SigninButton: PropTypes.func.isRequired,
   onUserConnected: PropTypes.func.isRequired,
+  onError: PropTypes.func.isRequired,
 };
