@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import firebase from '../firebase';
 
-export class Auth extends Component {
+export class Auth extends PureComponent {
   constructor(props) {
     super(props);
     this.handleSignIn = this.handleSignIn.bind(this);
