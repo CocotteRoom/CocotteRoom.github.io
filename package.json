@@ -8,26 +8,26 @@
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
+    "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "redux": "^4.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "yarn storybook:static && react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test:watch": "react-scripts test --env=jsdom",
+    "test": "CI=true react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "predeploy": "yarn build",
-    "deploy": "gh-pages --repo https://$GH_TOKEN@github.com/CocotteRoom/CocotteRoom.github.io.git -d build -b master",
+    "deploy":
+      "gh-pages --repo https://$GH_TOKEN@github.com/CocotteRoom/CocotteRoom.github.io.git -d build -b master",
     "format": "prettier-eslint --write \"src/**/*.js\"",
     "lint": "eslint ./src",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "storybook:static": "build-storybook -c .storybook -o ./public/storybook"
   },
-  "pre-commit": [
-    "lint",
-    "test",
-    "format"
-  ],
+  "pre-commit": ["lint", "test", "format"],
   "devDependencies": {
     "@storybook/react": "^3.4.4",
     "enzyme": "^3.3.0",
@@ -44,8 +44,6 @@
     "prettier-eslint-cli": "^4.7.1"
   },
   "jest": {
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ]
+    "snapshotSerializers": ["enzyme-to-json/serializer"]
   }
 }
