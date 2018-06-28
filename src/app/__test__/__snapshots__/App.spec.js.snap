@@ -12,7 +12,9 @@ exports[`App should match snapshot 1`] = `
 >
   <div>
     <Component />
-    <Component />
+    <main>
+      <Component />
+    </main>
   </div>
 </Provider>
 `;

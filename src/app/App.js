@@ -8,7 +8,9 @@ export const App = () => (
   <Provider store={store}>
     <div>
       <Header />
-      <MainRouter />
+      <main>
+        <MainRouter />
+      </main>
     </div>
   </Provider>
 );

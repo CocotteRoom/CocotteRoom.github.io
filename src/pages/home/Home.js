@@ -1,7 +1,8 @@
 import React from 'react';
+import Wrapper from '../../components/wrapper/Wrapper';
 
 export const Home = () => (
-  <div>
+  <Wrapper marginLeft="200px" backgroundColor="pink" >
     <div>Hello world</div>
-  </div>
+  </Wrapper>
 );
